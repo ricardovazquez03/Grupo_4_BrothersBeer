@@ -1,0 +1,55 @@
+<%- include("./partials/header") %>
+<br><br>
+    <h1><strong><%=Productos[id].nombre%></strong></h1>
+    <article class="articulo">
+        <div class="colum">
+            <p><img class="figura" src='/img/<%=Productos[id].imagen%>'></p>
+            <p><i class="fas fa-star rate"></i>
+            <i class="fas fa-star rate"></i>
+            <i class="fas fa-star rate"></i>
+            <i class="fas fa-star-half-alt rate"></i></p>
+        </div>
+        <div class="colum-b">
+        <p>$ <%=Productos[id].precio%></p>
+        <div><button class="boton s">-</button>Cantidad<button class="boton s">+</button></div>
+        <p>
+        <button class="boton">Agregar al carrito<i class="fas fa-cart-arrow-down"></i></button>
+        <a href="/Carrito"><button class="boton">Proceder al pago<i class="fas fa-cart-arrow-down"></i>
+        </button></a>
+        </p>
+        </div>
+    </article>  
+    <div class="descripcion">
+        <h3>Descripción del producto:</h3>
+        <br>
+        <p><%=Productos[id].descripcion%></p>
+    </div>
+<br><br>
+ <h1><strong>Productos que podrian interesarte</strong></h1>
+<section class="products">
+    <div class="size">
+        <a href="/Producto/0"><img class="imgs" src='/img/sol.jpg' alt='product1'></a>
+      <article>
+        <button class="boton">Agregar al carrito<i class="fas fa-cart-plus"></i></button>
+      </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/1"><img class="imgs" src='/img/heineken.jpg' alt='product2'></a>
+        <article>
+            <button class="boton">Agregar al carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/3"><img class="imgs" src='/img/pacifico.jpg' alt='product3'></a>
+        <article>
+            <button class="boton">Agregar al carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/2"><img class="imgs" src='/img/bocanegra.jpg' alt='product4'></a>
+        <article>
+            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+</section>
+<%- include("./partials/footer") %>

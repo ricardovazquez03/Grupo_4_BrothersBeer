@@ -1,0 +1,506 @@
+*{ 
+    font-family: 'Roboto';
+    text-size-adjust: 12px;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+} 
+   /*
+    colores
+    Negro? Cod gray #151515
+    Amarillo? Beer #FBB117
+    Gris? Bandicoot #7C7C70
+    Cafe? Shadow #847C4F
+    Azul Ml #0044AA
+    */
+
+/*Principal*/
+p{
+    font-family: roboto,arial;
+    font-size: 15px;
+}
+header{
+    width: 100%; 
+    background-color: #002f75;
+    padding:1% 2%;
+    color: #fff;
+    font-size: 20px;
+    }
+    .arriba{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin:auto;
+        padding-bottom: 2%;
+        flex-wrap: wrap;
+    }
+    .logo{
+        background-color: #fff ;
+        border: solid #FBB117 3px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        border-radius: 100%;
+        width: 100px;
+    }
+    .busqueda{
+        border: solid #FBB117 2px;
+        background-color: #fff;
+        color:#7C7C70;
+        border-radius: 8px;
+        width: 300px;
+    }
+    .iconos{
+        color: #fff;
+        font-size: 20px;
+    }
+    .center{
+        color: #fff;
+        padding-top:3%;
+    }
+    .abajo{
+        display: flex;
+        justify-content: space-evenly
+    }
+    header article a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .burger-menu{
+        display: none;
+        background-color: #fff;
+        border: #847C4F solid 2px;
+        border-radius: 100%;
+        color: #151515;
+        text-align: center;
+        width: 30px;
+        margin: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;       
+    }
+body{
+    background-color: #ebebeb;
+    }
+    body h1{
+        padding: 2%;
+        color: #151515;
+    }
+    .carousel{
+        text-align: center;
+    }
+    .images{
+        width: 100%;
+
+        }
+    .products{
+        background: none;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 2%;
+    }
+    .size{
+        text-align: center;
+        width: 20%;
+    }
+
+    .size:hover .imgs{
+        box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
+    }
+    .size:hover .imgs2{
+        box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
+    }
+    .size:hover .align{
+        box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
+    }
+    .imgs{
+        border: #0044AA solid 2px;
+        border-radius: 100%;
+        width: 100%;
+        height: 70%;
+        transition:box-shadow 1250ms;
+    }
+    .imgs2{
+        border: #0044AA solid 2px;
+        border-radius: 20%;
+        width: 100%;
+        height: 50%;
+        transition:box-shadow 1250ms;
+    }
+    .align{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2% 10%;
+        align-items: center;
+        background-color: #0044AA;
+        transition:box-shadow 1250ms;
+    }
+    .price{
+        color: #7C7C70;
+    }
+    .name{
+        color: #fff;
+    }
+
+/*Carrito*/
+.centrar{
+    padding: 50px;
+}
+.carrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background-color:#fff;
+    border-bottom: 1px solid #ccc;;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
+}
+.figura{
+    display: flex;
+    flex-direction: column;
+}
+.miniatura{
+    border-bottom: 2px solid #ccc;
+    width: 80px;
+    height: 100px;
+}
+.nombre{
+    padding-top: 10px;
+    text-align: center;
+    color:#151515;
+    font-size:15px;
+    font-family: roboto,arial;
+}
+.boton{
+    background-color:#0044AA;
+    border: none;
+    border-bottom: #ccc solid 2px;
+    border-right: #ccc solid 2px;
+    color: #fff;
+    border-radius: 8px;
+    width: 150px;
+}
+.boton:hover{
+    background-color:rgb(226, 32, 97);
+}
+.s{
+    width: 30px;
+}
+.pago{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 200px;
+}
+.total{
+    background-color:#0044AA;
+    border-radius: 8px;
+    color: #fff;
+    padding: 1%;
+}
+
+/* Footer*/
+footer {
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  padding: 20px;
+  font-size: 15px;
+  color:white;
+  background-color: #002f75;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+}
+
+footer .footer-enlaces ul{
+  list-style: none;
+  color:white;
+}
+footer .footer-enlaces ul li a{
+    list-style: none;
+      text-decoration: none;
+      color: white;
+}
+footer .footer-legal ul{
+  list-style: none;
+  color:white;
+}
+footer .footer-legal ul li a{
+    list-style: none;
+      text-decoration: none;
+      color: white;
+}
+
+footer p {
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-size: 23px;
+  border-bottom: rgba(182, 181, 181,1.2) solid 1px;
+}
+
+footer span {
+  position: relative;
+  color:white;
+  overflow: hidden;
+}
+
+.footer-contacto button {
+  width: 120px;
+  height: 20px;
+  margin-left: 10px;
+  color:white;
+}
+
+.footer-contacto input {
+  height: 20px;
+  width: 220px;
+  color:white;
+}
+
+.footer-logo h2 {
+  margin-bottom: 10px;
+  color:white;
+}
+
+.input-container-email {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+  
+/*Ayuda*/
+    .Notfound{
+    margin: auto;
+    text-align: center;
+    padding: 20%;
+    }
+    .ayuda{
+    color:  #fbb317;
+    font-size: 30vw;
+    animation: color 5000ms infinite alternate-reverse;
+    }
+
+@keyframes color{
+    20%{
+        color: #3a08af;
+    }
+    40%{
+        color: #0fc919c9;
+    } 
+    60%{
+        color: rgb(226, 32, 97);
+    }
+    80%{
+        color: #17fbfb;
+    }
+    100%{
+        color: rgb(105, 9, 9);
+    }
+}
+/*Producto*/
+    .articulo{
+        display: flex;
+        justify-content: space-between;
+        padding:2% 15%;
+    }
+    .colum{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .colum-b{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 5%;
+    }
+    .figura{
+        width: 500px;
+        height: 500px;
+        border-radius: 10%;
+    }
+    .rate{
+        font-size: 25px;
+        color:#fbb317;
+    }
+    .descripcion{
+        margin:auto;
+        border: #002f75 solid 1px;
+        text-align: justify;
+        width: 700px;
+        padding: 2%;   
+    }
+    
+/*Registro*/
+    input[type=text], input[type=password], input[type=date] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: rgb(240, 238, 238);
+        font-family: roboto,arial;
+        color:black;
+    }
+    input[type=text]:focus, input[type=password]:focus,input[type=date]:focus select:focus {
+        background-color:#ddd;
+        outline: none;
+    }
+
+    .formulario-registro{
+        margin:auto;
+    }
+  
+    .main-container-registro {
+        display:flex;
+        align-content: center;
+        justify-content: center;
+        padding: 10%;
+    }
+
+    .container-register{
+        padding: 20px;
+        width: 60%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background: white;
+        -webkit-box-shadow: -9px 8px 31px -4px rgba(0,0,0.90);
+        -moz-box-shadow: -9px 8px 31px -4px rgba(0,0,0,0.90);
+        box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
+    } 
+    /* estilo de titulo 1 (Bienvenido)*/
+    .main-container-registro h1 {
+        border-bottom: rgba(32, 32, 32, 0.322) solid 1px;  
+        padding-bottom: 10px;
+        font-size: 35px;
+        text-align: center;
+    }
+    /* estilo de titulo 2 (Registro)*/
+    .main-container-registro h2{
+        /*border-bottom: rgba(32, 32, 32, 0.322) solid 1px;*/ 
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-size: 20px;
+    }
+    /* estilo de parrafos*/
+    .main-container-registro p {
+        font-size: 1rem;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+    /* estilo de etiquetas*/
+    .main-container-registro label{
+        font-size: 1;
+        font-weight: bold;
+    }
+    /* olvidaste tu contraseña*/
+    .olvidaste{
+        font-size: .8rem;
+        font-weight: bold;
+        padding-left: 40%;
+    }
+    /*esto para el terminos y condiciones*/
+      input[type="checkbox"] {
+        content: "";
+        width:10px;
+        height: 15px;
+        float: left;
+        margin: 0.5 0.5 0,5;
+        border: 5px solid #ccc;
+        background: #fff;
+        }
+        /*Boton*/
+    .main-container-registro button {
+        background-color:#0044AA;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        font-size: 16px;
+        font-family: roboto,pacifico;
+        border-radius: 10px;
+    }
+    /*Boton hover */
+    .main-container-registro button:hover {
+        opacity: 1;
+    }
+
+@media (max-width:912px){
+    .busqueda{
+        width:100%
+    }
+    .abajo{
+        display: none;
+    } 
+    .burger-menu{
+        display: block;
+    }
+    .carrito{
+        width: 650px;
+    }
+    .pago{
+        padding: 2% 150px;
+    }
+    .products{
+        flex-wrap: wrap;
+    }
+    .size{
+        width: 40%;
+    }
+    .container-register{
+        width: 80%;
+    } 
+    .figura{
+       width: 50vw;
+    }
+    .descripcion{
+        width: 50vw;
+     }
+}
+@media (max-width:720px){
+    .pago{
+        flex-direction: column;
+        align-items: center;
+    }
+    .carrito{
+        flex-direction: column;
+        width: 80%;
+    }
+}
+@media (max-width:700px){
+    .products{
+        flex-direction: column;
+        align-content: center;
+    }
+    .size{
+        width: 90%;
+        height: 400px;
+    }
+    .footer-contacto{
+        display:none;
+    }
+    .footer-legal{
+        display:none;
+    }
+    .articulo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:2% 20%;
+        align-items:center;
+    }
+    .figura{
+        width: 80vw;
+        height: 60vh;
+    }
+    .descripcion{
+        margin: auto;
+        width: 80vw;
+    }
+}

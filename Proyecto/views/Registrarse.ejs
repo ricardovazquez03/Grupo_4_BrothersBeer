@@ -1,0 +1,24 @@
+<%- include("./partials/header") %>
+<div class="formulario-registro">
+    <div class="main-container-registro">
+     <div class="container-register">
+        <form action="/">
+                <h1>Bienvenido</h1>
+                <h2>Registrate</h2>
+                <p>Llena los datos para crear una cuenta:</p>
+                <label for="usr">Nombre de usuario</label>
+                <input type="text" name="username" placeholder="Escribe tu Usuario" required id="User">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Escribe tu Email" name="email" required id="email">
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" name="fecha"  required id="fecha">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Escribe tu Password" name="pws" required id="password">
+                <label id="condiciones" for="condiciones">Al crear tu cuenta aceptas nuestros <a href="#">Terminos y condiciones & Privacidad</a></label>
+                <input type="checkbox" id="check1" checked >
+                <button type="submit" class="btn">Registrate</button>
+            </div> 
+        </form>
+    </div>
+</div>
+<%- include("./partials/footer") %>

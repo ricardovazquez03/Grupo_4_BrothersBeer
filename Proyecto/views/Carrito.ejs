@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<%- include("./partials/header") %>
+<br><br>
+    <h1><strong>Tu Carrito<i class="fas fa-shopping-cart"></i></strong></h1>
+<section class="centrar">
+    <article class="carrito">
+        <div class="figura">
+        <img class="miniatura" src="/img/shirley_temple.png">
+        <p class="nombre">Shirley Temple</p>
+        </div>
+        <p><button class="boton s">-</button>Cantidad<button class="boton s">+</button></p>
+        <button class="boton">Quitar del Carrito<i class="fas fa-cart-arrow-down"></i></button>
+        <p>$$$</p>
+    </article>
+    <article class="carrito">
+        <div class="figura"><img class="miniatura" src="/img/sol.jpg">
+            <p class="nombre">Cerveza Sol</p>
+        </div>
+        <p><button class="boton s">-</button>Cantidad<button class="boton s">+</button></p>
+        <button class="boton">Quitar del Carrito<i class="fas fa-cart-arrow-down"></i></button>
+        $$$
+    </article>
+    <article class="carrito">
+        <div class="figura"><img class="miniatura" src="/img/margarita.jpg">
+        <p class="nombre">Margarita</p>
+        </div>
+        <p><button class="boton s">-</button>Cantidad<button class="boton s">+</button></p>
+        <button class="boton">Quitar del Carrito<i class="fas fa-cart-arrow-down"></i></button>
+        $$$
+    </article>
+    <div class="pago">
+    <button class="boton">Proceder al Pago</button>
+    <p class="total"><i class="fas fa-shopping-cart"></i>&emsp;Total a Pagar:&emsp;$$$</p>
+    </div>  
+</section>
+<br><br>
+ <h1><strong>Productos que Podrian Interesarte</strong></h1>
+<section class="products">
+    <div class="size">
+        <a href="/Producto/0"><img class="imgs" src='/img/sol.jpg' alt='product1'></a>
+      <article>
+        <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+      </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/1"><img class="imgs" src='/img/heineken.jpg' alt='product2'></a>
+        <article>
+            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/3"><img class="imgs" src='/img/pacifico.jpg' alt='product3'></a>
+        <article>
+            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+    <div class="size">
+        <a href="/Producto/2"><img class="imgs" src='/img/bocanegra.jpg' alt='product4'></a>
+        <article>
+            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+        </article>
+    </div>
+</section>
+<%- include("./partials/footer") %>
