@@ -67,7 +67,7 @@ header{
     .burger-menu{
         display: none;
         background-color: #fff;
-        border: #847C4F solid 2px;
+        border: #FBB117 solid 2px;
         border-radius: 100%;
         color: #151515;
         text-align: center;
@@ -156,7 +156,7 @@ body{
     text-align: center;
     box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
 }
-.figura{
+.fig{
     display: flex;
     flex-direction: column;
 }
@@ -190,13 +190,15 @@ body{
 .pago{
     display: flex;
     justify-content: space-between;
-    padding: 5% 200px;
+    padding-top: 5%;
+    margin: auto;
+    width: 80%;
 }
 .total{
-    background-color:#0044AA;
     border-radius: 8px;
-    color: #fff;
     padding: 1%;
+    text-align: center;
+    box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.90);
 }
 
 /* Footer*/
@@ -467,6 +469,7 @@ footer span {
     .pago{
         flex-direction: column;
         align-items: center;
+        
     }
     .carrito{
         flex-direction: column;
@@ -502,5 +505,15 @@ footer span {
     .descripcion{
         margin: auto;
         width: 80vw;
+    }
+    .total{
+        width: 50vw;
+    }
+    
+    .pago{
+        flex-direction: column;
+    }
+    .boton{
+        height: 30px;
     }
 }

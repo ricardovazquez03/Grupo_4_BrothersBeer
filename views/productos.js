@@ -34,7 +34,7 @@ const productos=[
 
     {
         id:4,
-        nombre:"Bebida Margarita",
+        nombre:"Cóctel Margarita",
         descripcion:"La margarita es un cóctel compuesto por tequila, triple sec y jugo de lima o limón. A menudo se sirve con sal en el borde de la copa. La bebida se sirve sacudiendo el hielo (con hielo), mezclado con hielo, o sin hielo.",
         precio:50,
         imagen:"margarita.jpg"
@@ -42,7 +42,7 @@ const productos=[
 
     {
         id:5,
-        nombre:"Bebida Martini",
+        nombre:"Cóctel Martini",
         descripcion:"El martini o martini seco (Dry Martini en inglés) es uno de los cócteles más conocidos, compuesto de ginebra con un chorro de vermut. Suele servirse en copa de cóctel, adornado con una aceituna cruzada.",
         precio:55,
         imagen:"martini.png"
@@ -50,7 +50,7 @@ const productos=[
 
     {
         id:6,
-        nombre:"Bebida daiquiri",
+        nombre:"Cóctel daiquiri",
         descripcion:"El Daiquiri tradicional es una bebida que se prepara a base de azúcar, limón y ron blanco. Con el paso del tiempo, a partir de esta receta tradicional se han desarrollado muchas variantes, que mantienen algunos ingredientes básicos pero incorporan algunos nuevos.",
         precio:55,
         imagen:"daiquiri.png"
@@ -58,10 +58,10 @@ const productos=[
 
     {
         id:7,
-        nombre:"Bebida Shirley temple",
+        nombre:"Cóctel Shirley temple",
         descripcion:"Un Shirley Temple es un cóctel no alcohólico, bautizado en honor de la actriz infantil de cine y posteriormente diplomática estadounidense Shirley Temple. Está compuesto de cinco medidas de refresco de lima-limón o de ginger-ale y un toque de granadina, decorado con una guinda al marrasquino y una rodaja de naranja.",
         precio:45,
-        imagen:"Shirley_temple.png"
+        imagen:"shirley_temple.png"
     },
 ]
 
