@@ -22,6 +22,8 @@ index.get('/Ayuda',Direcciones.ayuda);
 
 index.get('/Producto/:id',Direcciones.producto);
 
+index.get('/historial',Direcciones.historial);
+
 
 
 /*index.listen(process.env.PORT || 4000,()=>{

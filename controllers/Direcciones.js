@@ -24,9 +24,11 @@ const direcciones ={
 
     ayuda:(req,res)=>{
         res.render("Ayuda")
+    },
+
+    historial:(req,res)=> {
+        res.render("historial")
     }
-
-
 
 };
 
