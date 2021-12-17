@@ -284,6 +284,32 @@ footer span {
     animation: color 5000ms infinite alternate-reverse;
     }
 
+    /*Historial de compras */
+
+    .boxfondo{
+        color:green;
+        border:solid brown;
+        margin-top: 15px;
+    }
+
+    .boxmedio{
+        border:solid red;
+    }
+
+    .boxinfo{
+        border:solid orange;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(128, 128, 128, 0.582);
+    }
+
+    .productocompra{
+        border:solid purple;
+        border-right: 80%;
+        border-bottom: 50%;
+        
+    }
+
 @keyframes color{
     20%{
         color: #3a08af;

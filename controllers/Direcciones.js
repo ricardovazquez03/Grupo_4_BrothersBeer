@@ -28,7 +28,7 @@ const direcciones ={
 
     historial:(req,res)=> {
         res.render("historial")
-    }
+    },
 
 };
 
