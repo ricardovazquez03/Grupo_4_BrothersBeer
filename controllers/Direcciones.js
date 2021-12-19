@@ -30,6 +30,10 @@ const direcciones ={
         res.render("historial")
     },
 
+    registroproductos:(req,res)=> {
+        res.render("registroproductos")
+    },
+
 };
 
 module.exports=direcciones;

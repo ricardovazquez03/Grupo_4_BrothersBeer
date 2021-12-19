@@ -1,0 +1,36 @@
+
+<%- include("./partials/header") %>
+ <body>
+    <div class="agregar-inventario">
+
+        <form action="/editar" method="POST" class="contenedor-formulario" enctype="multipart/form-data">
+            <h2>Formulario para nuevos productos</h2>
+            <label for="item">Nombre del producto</label>
+            <input class="item" type="text" name="item" id="item" placeholder="nuevo producto" required>
+            <label for="type">Tipo de Cerveza</label>
+            <select class="item" name="type" id="type">
+                <option selected value="" Elige>Elige</option>
+                <option value="Aler">Aler</option>
+                <option value="Lager">Lager</option>
+            </select>
+            <label for="description">Descripcion del producto</label>
+            <textarea class="item" name="description" id="description" rows="3" cols="50">Escribe la descripción aquí.
+                    </textarea>
+            <label for="image"> Imagen para el producto</label>
+            <input class="item" type="file" name="image" id="image" placeholder="Selecciona imagen del producto"
+                required>
+            <label for="score">Score</label>
+            <input class="item" type="text" name="score" id="score" placeholder="1-5">
+            <label for="discount">Descuento del producto</label>
+            <input type="text" name="discout" placeholder="10">
+            <label for="boughts">Número comprado</label>
+            <input type="text" name="boughts" id="boughts" placeholder="50">
+            <label for="price">Precio del producto</label>
+            <input class="item" type="text" name="price" id="price" placeholder="$$$">
+            <input class="item" type="submit" value="Submit">
+            <button class="item" type="reset" value="reset">Vaciar formulario</button>
+        </form>
+        </div>
+ </body>
+
+        <%- include("./partials/footer") %>
