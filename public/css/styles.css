@@ -18,6 +18,7 @@
 p{
     font-family: roboto,arial;
     font-size: 15px;
+    margin-top: 2px;
 }
 header{
     width: 100%; 
@@ -287,29 +288,62 @@ footer span {
     /*Historial de compras */
 
     .boxfondo{
-        color:green;
-        border:solid brown;
+        color:black;
         margin-top: 15px;
+        font-size-adjust: 100px;
+        background-color: white;
+
     }
 
     .boxmedio{
-        border:solid red;
+        /*border:solid red;*/
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .boxinfo{
-        border:solid orange;
+        border:solid rgba(0, 0, 0, 0.644);
+        font-size: 100px;
         display: flex;
-        justify-content: space-between;
-        background-color: rgba(128, 128, 128, 0.582);
+        justify-content: space-around;
+        background-color: rgba(128, 128, 128, 0.377);
     }
 
     .productocompra{
-        border:solid purple;
-        border-right: 80%;
-        border-bottom: 50%;
-        
+       /* border:solid purple;*/
+        margin-right: 80%;
+        margin-top: 5px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .compraima{
+        border:solid skyblue;
+        height:250px;
+        justify-content: center;
+        text-align: center;
+    
     }
 
+    .boxname{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+    }
+    .namehistorial{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color:#002f75;
+        color: white;
+        border-radius:5px;
+        margin-bottom: 5px;
+      
+        
+    }
 @keyframes color{
     20%{
         color: #3a08af;
