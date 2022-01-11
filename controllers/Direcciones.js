@@ -2,11 +2,11 @@ const Productos=require("../views/productos")
 const direcciones ={
 
     home: (req,res)=>{
-        res.render("home");
+        res.render("home",{Productos:Productos});
     },
 
     carrito:(req,res)=>{
-        res.render("Carrito");
+        res.render("Carrito",{Productos:Productos});
     },
 
     producto:(req,res)=>{

@@ -35,30 +35,18 @@
 </section>
 <br><br>
  <h1><strong>Productos que Podrian Interesarte</strong></h1>
-<section class="products">
+ <section class="products">
+    <% for (let i = 0; i <= 3; i++) { %>
     <div class="size">
-        <a href="/Producto/0"><img class="imgs" src='/img/sol.jpg' alt='product1'></a>
+      <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
-        <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
+       <div class="align">
+        <h3 class="price">$ <%=Productos[i].precio%></h3>
+        <br>
+        <p class="name"><%=Productos[i].nombre%></p>
+       </div>
       </article>
     </div>
-    <div class="size">
-        <a href="/Producto/1"><img class="imgs" src='/img/heineken.jpg' alt='product2'></a>
-        <article>
-            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
-        </article>
-    </div>
-    <div class="size">
-        <a href="/Producto/3"><img class="imgs" src='/img/pacifico.jpg' alt='product3'></a>
-        <article>
-            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
-        </article>
-    </div>
-    <div class="size">
-        <a href="/Producto/2"><img class="imgs" src='/img/bocanegra.jpg' alt='product4'></a>
-        <article>
-            <button class="boton">Agregar al Carrito<i class="fas fa-cart-plus"></i></button>
-        </article>
-    </div>
+    <% } %>
 </section>
 <%- include("./partials/footer") %>
