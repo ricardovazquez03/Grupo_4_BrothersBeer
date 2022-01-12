@@ -1,21 +1,22 @@
 
 <%- include("./partials/header") %>
  <body>
-     <div class="formulario-registro">
-        <div class="main-container-registro">
-         <div class="container-register">
-        <form action="/editar" method="POST" class="contenedor-formulario">
+    <div class="formulario-registro">
+    <div class="main-container-registro">
+    <div class="container-register">
+
+        <form action="/editar" method="POST" enctype="multipart/form-data">
             <h2>Formulario para nuevos productos</h2>
             <label for="item">Nombre del producto</label>
             <input class="item" type="text" name="item" id="item" placeholder="nuevo producto" required>
-            <label for="type">Tipo de Producto</label>
+            <label for="type">Tipo de producto</label>
             <select class="item" name="type" id="type">
                 <option selected value="" Elige>Elige</option>
-                <option value="Cerveza">Aler</option>
-                <option value="Bebidas">Lager</option>
+                <option value="Cerveza">Cerveza</option>
+                <option value="Bebida">Bebida</option>
             </select>
             <label for="description">Descripcion del producto</label>
-            <textarea class="item" name="description" id="description" rows="3" cols="50">Escribe la descripción aquí.
+            <textarea class="item" name="description" id="description" placeholder="Escribe la descripción aquí." rows="3" cols="50">
                     </textarea>
             <label for="image"> Imagen para el producto</label>
             <input class="item" type="file" name="image" id="image" placeholder="Selecciona imagen del producto"
@@ -28,12 +29,12 @@
             <input type="text" name="boughts" id="boughts" placeholder="50">
             <label for="price">Precio del producto</label>
             <input class="item" type="text" name="price" id="price" placeholder="$$$">
-            <button class="item" type="submit" value="Submit">Crear Producto</button>
+            <button class="item" type="submit" value="Submit"> Crear producto</button> 
             <button class="item" type="reset" value="reset">Vaciar formulario</button>
         </form>
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
  </body>
 
         <%- include("./partials/footer") %>
