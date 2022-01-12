@@ -1,9 +1,10 @@
 
 <%- include("./partials/header") %>
  <body>
-    <div class="agregar-inventario">
-
-        <form action="/editar" method="POST" class="contenedor-formulario" enctype="multipart/form-data">
+     <div class="formulario-registro">
+        <div class="main-container-registro">
+         <div class="container-register">
+        <form action="/editar" method="POST" class="contenedor-formulario">
             <h2>Formulario para nuevos productos</h2>
             <label for="item">Nombre del producto</label>
             <input class="item" type="text" name="item" id="item" placeholder="nuevo producto" required>
@@ -27,10 +28,12 @@
             <input type="text" name="boughts" id="boughts" placeholder="50">
             <label for="price">Precio del producto</label>
             <input class="item" type="text" name="price" id="price" placeholder="$$$">
-            <input class="item" type="submit" value="Submit">
+            <button class="item" type="submit" value="Submit">Crear Producto</button>
             <button class="item" type="reset" value="reset">Vaciar formulario</button>
         </form>
         </div>
+      </div>
+    </div>
  </body>
 
         <%- include("./partials/footer") %>
