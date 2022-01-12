@@ -1,4 +1,4 @@
-const Productos=require("../views/productos")
+const Productos=require("../views/productos");
 const direcciones ={
 
     home: (req,res)=>{
@@ -34,21 +34,24 @@ const direcciones ={
         res.render("registroproductos")
     },
 
-    registro:(req,res)=> {
+    registro:(req,res,Nombre)=> {
+console.log(req.file)
+        if (req.file) {
+            
         let NuevoProducto=
         {
         id:Productos.length+1,
         nombre:req.body.nombre,
         descripcion:req.body.description,
         precio:req.body.precio,
-        /* req.body.imagen */
+        imagen:req.file.filename,
         categoria:req.body.categoria,
         puntuacion:req.body.puntuacion,
        }
 
        Productos.push(NuevoProducto)
 
-        res.redirect("/")
+        res.redirect("/")}
     },
 
 };
