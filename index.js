@@ -32,10 +32,10 @@ index.get('/registroproductos',Direcciones.registroproductos);
 index.post('/nuevo',Direcciones.registro);
 
 
-index.listen(4000,()=>{
+/* index.listen(4000,()=>{
   console.log("Brother's Beers online...");
-})
+}) */
 
-/* index.listen(process.env.PORT || 4000, function(){
+index.listen(process.env.PORT || 4000, function(){
   console.log("Brother's Beers online...");
-});  */
+});  
