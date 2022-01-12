@@ -36,8 +36,9 @@
 <br><br>
  <h1><strong>Productos que Podrian Interesarte</strong></h1>
  <section class="products">
-    <% for (let i = 0; i <= 3; i++) { %>
-    <div class="size">
+    <% for (j=0; j<=4;j++) { %>
+        <%let i = Math.floor((Math.random() * Productos.length) + 0); %>
+    <div class="size2">
       <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
        <div class="align">
