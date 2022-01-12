@@ -1,13 +1,19 @@
 <%- include("./partials/header") %>
 <br><br>
-    <h1><strong><%=Productos[id].nombre%></strong></h1>
+    <h1><strong><%=Productos[id].categoria%> <%=Productos[id].nombre%></strong></h1>
     <article class="articulo">
         <div class="colum">
             <p><img class="figura" src='/img/<%=Productos[id].imagen%>'></p>
-            <p><i class="fas fa-star rate"></i>
+            <p><% if (Number.isInteger(Productos[id].puntuacion)==true){ %>
+            <% for (j=1; j<=Productos[id].puntuacion;j++) { %>
             <i class="fas fa-star rate"></i>
+                <% } %>
+                <% }else{let NuevaPuntuacion=Math.floor(Productos[id].puntuacion)%>
+                    <% for (j=1; j<=NuevaPuntuacion;j++) { %>
             <i class="fas fa-star rate"></i>
-            <i class="fas fa-star-half-alt rate"></i></p>
+            <% } %>
+            <i class="fas fa-star-half-alt rate"></i>
+            <% } %></p>
         </div>
         <div class="colum-b">
         <p>$ <%=Productos[id].precio%></p>
@@ -27,8 +33,9 @@
 <br><br>
  <h1><strong>Productos que podrian interesarte</strong></h1>
  <section class="products">
-    <% for (let i = 0; i <= 3; i++) { %>
-    <div class="size">
+    <% for (j=0; j<=4;j++) { %>
+        <%let i = Math.floor((Math.random() * Productos.length) + 0); %>
+    <div class="size2">
       <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
        <div class="align">

@@ -95,12 +95,19 @@ body{
         background: none;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         margin: auto;
         padding: 2%;
     }
     .size{
         text-align: center;
         width: 20%;
+        margin: 0 2%;
+    }
+    .size2{
+        text-align: center;
+        width: 15%;
+        height: 300px;
     }
 
     .size:hover .imgs{
@@ -426,26 +433,21 @@ button:hover {
     align-items: center;
 }
 
+.item1{
+    display: flex;
+    width:50%;
+    margin: auto;
+    margin-bottom: 5%;
+}
 .item{
     display: flex;
+    width:100%;
+    margin: auto;
+    margin-bottom: 5%;
+    resize: none;
+    background-color: rgb(238, 236, 236);
+    border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @keyframes color{
     20%{
@@ -493,10 +495,11 @@ button:hover {
     }
     .descripcion{
         margin:auto;
-        border: #002f75 solid 1px;
+        border-radius: 8px;
         text-align: justify;
         width: 700px;
-        padding: 2%;   
+        padding: 2%; 
+        background-color:#fff;  
     }
     
 /*Registro*/
@@ -618,6 +621,10 @@ button:hover {
     .size{
         width: 40%;
     }
+
+    .size2{
+        width: 27%; 
+    }
     .container-register{
         width: 80%;
     } 
@@ -647,6 +654,11 @@ button:hover {
     .size{
         width: 90%;
         height: 400px;
+    }
+    .size2{
+        text-align: center;
+        width: 80%;
+        height: 500px;
     }
     .footer-contacto{
         display:none;

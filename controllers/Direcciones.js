@@ -34,6 +34,23 @@ const direcciones ={
         res.render("registroproductos")
     },
 
+    registro:(req,res)=> {
+        let NuevoProducto=
+        {
+        id:Productos.length+1,
+        nombre:req.body.nombre,
+        descripcion:req.body.description,
+        precio:req.body.precio,
+        /* req.body.imagen */
+        categoria:req.body.categoria,
+        puntuacion:req.body.puntuacion,
+       }
+
+       Productos.push(NuevoProducto)
+
+        res.redirect("/")
+    },
+
 };
 
 module.exports=direcciones;

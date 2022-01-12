@@ -5,30 +5,38 @@
     <div class="main-container-registro">
     <div class="container-register">
 
-        <form action="/editar" method="POST" enctype="multipart/form-data">
+        <form action="/nuevo" method="POST">
             <h2>Formulario para nuevos productos</h2>
             <label for="item">Nombre del producto</label>
-            <input class="item" type="text" name="item" id="item" placeholder="nuevo producto" required>
+            <input class="item" type="text" name="nombre" id="nombre" placeholder="Nuevo producto" required>
             <label for="type">Tipo de producto</label>
-            <select class="item" name="type" id="type">
+            <select class="item1" name="categoria" id="categoria">
                 <option selected value="" Elige>Elige</option>
                 <option value="Cerveza">Cerveza</option>
-                <option value="Bebida">Bebida</option>
+                <option value="Cóctel">Cóctel</option>
             </select>
             <label for="description">Descripcion del producto</label>
-            <textarea class="item" name="description" id="description" placeholder="Escribe la descripción aquí." rows="3" cols="50">
+            <textarea class="item" name="description" id="description">
                     </textarea>
             <label for="image"> Imagen para el producto</label>
-            <input class="item" type="file" name="image" id="image" placeholder="Selecciona imagen del producto"
-                required>
-            <label for="score">Score</label>
-            <input class="item" type="text" name="score" id="score" placeholder="1-5">
-            <label for="discount">Descuento del producto</label>
-            <input type="text" name="discout" placeholder="10">
-            <label for="boughts">Número comprado</label>
-            <input type="text" name="boughts" id="boughts" placeholder="50">
+            <input class="item" type="file" name="imagen" id="imagen" placeholder="Selecciona imagen del producto"
+                >
+            <label for="score">Puntuación</label>
+            <select class="item1" name="puntuacion" id="puntuacion">
+                <option selected value="" Elige>Elige</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5</option>
+            </select>
             <label for="price">Precio del producto</label>
-            <input class="item" type="text" name="price" id="price" placeholder="$$$">
+            <input class="item" type="number" name="precio" id="precio" placeholder="Digita el precio del producto">
             <button class="item" type="submit" value="Submit"> Crear producto</button> 
             <button class="item" type="reset" value="reset">Vaciar formulario</button>
         </form>

@@ -7,7 +7,8 @@
  <h1><strong>Cervezas más Populares</strong></h1>
     
 <section class="products">
-    <% for (let i = 0; i <= 3; i++) { %>
+    <% for (let i in Productos) { %>
+        <% if(Productos[i].categoria==="Cerveza"){ %>
     <div class="size">
       <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
@@ -19,12 +20,14 @@
       </article>
     </div>
     <% } %>
+    <% } %>
 </section>
 <br><br>
 <!--Bebidas-->
-<h1><strong>Bebidas más Populares</strong></h1>
+<h1><strong>Cócteles más Populares</strong></h1>
 <section class="products">
-    <% for (let i = 4; i <= 7; i++) { %>
+    <% for (let i in Productos) { %>
+        <% if(Productos[i].categoria==="Cóctel"){ %>
     <div class="size">
       <a href="/Producto/<%=i%>"><img class="imgs2" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
@@ -35,6 +38,7 @@
        </div>
       </article>
     </div>
+    <% } %>
     <% } %>
 </section>
 <br><br>
