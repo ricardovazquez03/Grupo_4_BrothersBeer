@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+<body>
+   <div class="formulario-registro">
+   <div class="main-container-registro">
+   <div class="container-register">
+
+       <form action="/borrar?_method=DELETE" method="POST">
+           <h1>Eliminar un producto</h1>
+           <br>
+           <label for="item">Escribe el nombre del producto a eliminar</label>
+           <br><br>
+           <%for(indx in Productos){%>
+            <option value=""><%=Productos[indx].nombre%></option>
+            <%}%>
+            <br><br>
+            <input type="text" class="item1" name="borrado" id="borrado" placeholder="Qué producto quieres borrar?" required>  
+            <br><br>
+           <label>Eliminando un producto aceptas que todos los datos referentes al mismo van a ser borrados de la base de datos</label>
+           <br><br>
+           <button class="item" type="submit" value="Submit">Eliminar producto</button> 
+           <button class="item" type="reset" value="reset">Cambié de opinión</button>
+       </form>
+       </div>
+       </div>
+       </div>
+</body>
+
+       <%- include("./partials/footer") %>

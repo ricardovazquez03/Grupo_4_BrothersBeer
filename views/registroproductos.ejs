@@ -6,7 +6,8 @@
     <div class="container-register">
 
         <form action="/nuevo" method="POST" enctype="multipart/form-data">
-            <h2>Formulario para nuevos productos</h2>
+            <h1>Formulario para nuevos productos</h1>
+            <br>
             <label for="item">Nombre del producto</label>
             <input class="item" type="text" name="nombre" id="nombre" placeholder="Nuevo producto" required>
             <label for="type">Tipo de producto</label>
@@ -16,14 +17,12 @@
                 <option value="Cóctel">Cóctel</option>
             </select>
             <label for="description">Descripcion del producto</label>
-            <textarea class="item" name="description" id="description">
-                    </textarea>
+            <textarea class="item" name="description" id="description"></textarea>
             <label for="imagen"> Imagen para el producto</label>
-            <input class="item" type="file" name="imagen" id="imagen"
-                required>
+            <input class="item" type="file" name="imagen" id="imagen"required>
             <label for="score">Puntuación</label>
             <select class="item1" name="puntuacion" id="puntuacion" required>
-                <option selected value="" Elige>Elige</option>
+                <option selected value="">Elige</option>
                 <option value="0.5">0.5</option>
                 <option value="1">1</option>
                 <option value="1.5">1.5</option>

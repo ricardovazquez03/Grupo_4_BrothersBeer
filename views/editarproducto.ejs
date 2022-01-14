@@ -1,0 +1,47 @@
+
+<%- include("./partials/header") %>
+<body>
+   <div class="formulario-registro">
+   <div class="main-container-registro">
+   <div class="container-register">
+
+       <form action="/editar/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+           <h1>Formulario edición de productos</h1>
+           <br>
+           <label for="item">Nombre del producto</label>
+           <input class="item" type="text" name="nombre" id="nombre" value="<%=Productos[id].nombre%>" required>
+           <label for="type">Tipo de producto</label>
+           <select class="item1" name="categoria" id="categoria" required>
+               <option selected value="<%=Productos[id].categoria%>" Elige><%=Productos[id].categoria%></option>
+               <option value="Cerveza">Cerveza</option>
+               <option value="Cóctel">Cóctel</option>
+           </select>
+           <label for="description">Descripcion del producto</label>
+           <textarea class="item" name="description" id="description"><%=Productos[id].descripcion%></textarea>
+           <label for="imagen"> Imagen para el producto</label>
+           <input class="item" type="file" name="imagen" id="imagen">
+           <label for="score">Puntuación</label>
+           <select class="item1" name="puntuacion" id="puntuacion" required>
+               <option selected value="<%=Productos[id].puntuacion%>"><%=Productos[id].puntuacion%></option>
+               <option value="0.5">0.5</option>
+               <option value="1">1</option>
+               <option value="1.5">1.5</option>
+               <option value="2">2</option>
+               <option value="2.5">2.5</option>
+               <option value="3">3</option>
+               <option value="3.5">3.5</option>
+               <option value="4">4</option>
+               <option value="4.5">4.5</option>
+               <option value="5">5</option>
+           </select>
+           <label for="price">Precio del producto</label>
+           <input class="item" type="number" name="precio" id="precio" value="<%=Productos[id].precio%>" required>
+           <button class="item" type="submit" value="Submit"> Editar producto</button> 
+           <button class="item" type="reset" value="reset">Vaciar formulario</button>
+       </form>
+       </div>
+       </div>
+       </div>
+</body>
+
+       <%- include("./partials/footer") %>
