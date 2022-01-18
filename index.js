@@ -25,7 +25,7 @@ const imagenproducto=multer.diskStorage({
 
 })
 
-const guardarimagen= multer({imagenproducto});
+const guardarimagen= multer({storage:imagenproducto});
 
 index.get('/',Direcciones.home);
 
@@ -44,8 +44,8 @@ index.get('/historial',Direcciones.historial);
 index.get('/registroproductos',Direcciones.registroproductos);
 index.post('/nuevo',guardarimagen.single("imagen"),Direcciones.registro);
 
-index.get('/borrarproducto',Direcciones.borrarproductos);
-index.delete('/borrar',Direcciones.borrar);
+index.get('/borrarproducto/:id',Direcciones.borrarproductos);
+index.delete('/borrar/:id',Direcciones.borrar);
 
 index.get('/editarproducto/:id',Direcciones.editarproductos);
 index.put('/editar/:id',Direcciones.editar);
@@ -54,11 +54,11 @@ index.use((req,res,next)=>{
   res.status(404).render("Ayuda")
 })
 
-/*    index.listen(4000,()=>{
+    index.listen(4000,()=>{
   console.log("Brother's Beers online...");
-})   */
+})   
  
-  index.listen(process.env.PORT || 4000, function(){
+ /*  index.listen(process.env.PORT || 4000, function(){
   console.log("Brother's Beers online...");
-});   
+});    */
   

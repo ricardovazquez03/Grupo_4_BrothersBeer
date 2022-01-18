@@ -62,48 +62,36 @@ const direcciones ={
     },
 
     borrarproductos:(req,res)=> {
-        res.render("borrarproducto",{Productos:Productos})
+        let id=req.params.id;
+        res.render("borrarproducto",{id:id,Productos:Productos})
     },
 
     borrar:(req,res)=> {
-        if (req.body) {
-        for(idx in Productos){
-            if(Productos[idx].nombre==req.body.borrado){
-               let Nuevos=Productos.slice(idx, Productos.length);
-              NuevaLista= Nuevos.shift(Nuevos[0])
-              Productos.push(Nuevos)
-            }
-        }
-
-       let NuevoListajs=JSON.stringify(Productos);
-       fs.writeFileSync(path.join(__dirname,'productos.json'),NuevoListajs)
-       res.redirect("/")
+        const id = req.params.id;
+        if (id) {
+        const idx = Productos.findIndex(Productos => Productos.id == id)
+        Productos.splice(idx, 1)
+            let NuevosProductosjs=JSON.stringify(Productos);
+            fs.writeFileSync(path.join(__dirname,'productos.json'),NuevosProductosjs)
+            res.redirect("/")
     }
         res.redirect("/Ayuda")
     },
 
     editarproductos:(req,res)=> {
-        let id=req.params.id;
+        const id=req.params.id;
         res.render("editarproducto",{id:id,Productos:Productos})
     },
 
     editar:(req,res)=> {
-        let id=req.params.id;
-        if (req.body) {
-        Productos.slice(id, Productos.length);
-        let Producto=
-           {
-            nombre:req.body.nombre,
-            descripcion:req.body.description,
-            precio:req.body.precio,
-            imagen:req.file.filename,
-            categoria:req.body.categoria,
-            puntuacion:req.body.puntuacion,
-           }
-           res.redirect("/")
-        }
-
-        res.redirect("/Ayuda")
+        const id = req.params.id;
+        if (id) {
+            /*No edita*/
+              res.redirect('/producto/'+id)
+                
+            }
+            res.redirect("/Ayuda")
+              
     }
 
 };

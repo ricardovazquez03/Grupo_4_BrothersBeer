@@ -590,7 +590,7 @@ button:hover {
         background: #fff;
         }
         /*Boton*/
-    .main-container-registro button {
+    .button1 {
         background-color:#0044AA;
         color: white;
         padding: 14px 20px;
@@ -604,13 +604,38 @@ button:hover {
         border-radius: 10px;
     }
     /*Boton hover */
-    .main-container-registro button:hover {
+    .button1:hover {
         opacity: 1;
     }
 
     .listado{
         display: inline;
         width: 50%;
+    }
+
+    /* Borrar*/
+    .especial0{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .especial{
+        background-color: transparent;
+        border: none;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        padding: auto;
+        
+    }
+    .especial:hover .carita{
+       transform: scale(1.3);
+       color: #3a08af;
+    }
+    .carita{
+        color:#fbb317;
+        font-size: 100px;
+        transition: 1500ms;
     }
 
 
