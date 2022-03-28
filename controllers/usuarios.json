@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "username": "Tu Mama",
+        "direccion": "Omnipresente",
+        "email": "UrGfa@email.com",
+        "password": "Monita123"
+    },
+    {
+        "id": 2,
+        "username": "Angel",
+        "direccion": "Omnipresente",
+        "email": "angel@hotmail.com",
+        "password": "$2a$10$4HjVpbQk5WJTuVQqxxZolexYv3XArNI.pGN9Q4t8EwzeRhNKpq9NG"
+    }
+]

@@ -1,0 +1,21 @@
+<%- include("./partials/header") %>
+<div class="formulario-registro">
+    <div class="main-container-registro">
+        <div class="container-register fondo-registro">
+        
+                <h1>Bienvenido <%=Usuario.username%></h1>
+                <img class="Usuario" src='/img/<%=Usuario.imagen%>'>
+                <p>Dirección de correo: <%= Usuario.email%></p>
+                <p>Dirección de envio: <%= Usuario.direccion%></p>
+                <p>
+                <a href="/historial"><i class="fas fa-history"></i> Historial de Compras</a>&emsp;
+                <a href="/Carrito"><i class="fas fa-shopping-cart"></i> Tu Carrito de Compras</a>
+                <%if(Usuario.desarrollador!=null){%>
+                    <br><br>
+                <a href="/registroproductos"><i class="fas fa-plus-circle"></i> Registro de productos</a>&emsp;
+                <%}%>
+                </p>
+        </div>  
+    </div>
+</div>
+<%- include("./partials/footer") %>

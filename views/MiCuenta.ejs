@@ -2,17 +2,27 @@
 <div class="formulario-registro">
     <div class="main-container-registro">
      <div class="container-register fondo-registro">
-        <form action="/" method="POST">
-                <h1>Registro de Producto</h1>
-                <label for="usr">Nombre del producto</label>
-                <input type="text" name="username" placeholder="Escribe el nombre del producto" required id="User">
-                <label for="email">Email</label>
-                <input type="text" placeholder="Escribe tu Email" name="email" required id="email">
+        <form action="/MiCuenta/IniciarSesion" method="POST" enctype="multipart/form-data">
+                <h1>Bienvenido de Vuelta</h1>
+                <%if(locals.errores){%> 
+                    <%for(i in errores){%>
+                    <p class="errores"><%= errores[i].msg%></p>
+                    <%}%>    
+                <%}%>
+                <label for="usr">Ingresa tu nombre de usuario</label>
+                <input type="text" name="username" id="username" placeholder="Escribe tu nombre de usuario" 
+                value="<%= locals.old ? old.username: null%>" required>
+                    
                 <label for="password">Password</label>
-                <input type="password" placeholder="Escribe tu Password" name="pws" required id="password">
+                <input type="password" placeholder="Escribe tu Password" name="password" id="password" required>
+                <p class="olvidaste"><label>Recordame</label>
+                <input  type="checkbox" id="recuerdame" name="recuerdame" checked></p>
+                
                 <button type="submit" class="btn">Ingresar</button>
                 <br>
-                <a class="olvidaste" href="">¿Olvidaste tu contraseña?</a>
+                <a class="olvidaste" href="/Nimodo">¿Olvidaste tu contraseña?</a>
+                <br>
+                <a  href="/Registrarse">No tienes cuenta?, Regístrate!</a>
             </div> 
         </form>
     </div>

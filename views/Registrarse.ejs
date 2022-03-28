@@ -1,26 +1,49 @@
 <%- include("./partials/header") %>
-<div class="formulario-registro">
+
     <div class="main-container-registro">
-     <div class="container-register">
-        <form action="/">
+        <form action="/RegistroUsuario" method="POST" enctype="multipart/form-data">
+            <div class="container-register">
                 <h1>Bienvenido</h1>
                 <h2>Registrate</h2>
                 <p>Llena los datos para crear una cuenta:</p>
-                <label for="usr">Nombre de usuario</label>
-                <input type="text" name="username" placeholder="Escribe tu Usuario" required id="User">
-                <label for="usr">Dirección</label>
-                <input type="text" name="username" placeholder="Escribe tu Dirección" required id="direccion">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" name="username" id="username" placeholder="Escribe tu Usuario"  
+                value="<%= locals.old ? old.username: null%>" required>
+                <%if(locals.errores && errores.username){%>  
+                        <p class="errores"><%= errores.username.msg%></p>   
+                    <%}%>
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id="direccion" placeholder="Escribe tu Dirección"  
+                value="<%= locals.old ? old.direccion: null%>" required>
+                <%if(locals.errores && errores.direccion){%>  
+                    <p class="errores"><%= errores.direccion.msg%></p>   
+                <%}%>
                 <label for="email">Email</label>
-                <input type="text" placeholder="Escribe tu Email" name="email" required id="email">
-                <label for="fecha">Fecha de nacimiento</label>
-                <input type="date" name="fecha"  required id="fecha">
+                <input type="text" placeholder="Escribe tu Email" name="email" id="email" 
+                value="<%= locals.old ? old.email: null%>" required>
+                <%if(locals.errores && errores.email){%>  
+                    <p class="errores"><%= errores.email.msg%></p>   
+                <%}%>
                 <label for="password">Password</label>
-                <input type="password" placeholder="Escribe tu Password" name="pws" required id="password">
-                <label id="condiciones" for="condiciones">Al crear tu cuenta aceptas nuestros <a href="#">Terminos y condiciones & Privacidad</a></label>
-                <input type="checkbox" id="check1" checked >
-                <button type="submit" class="btn">Registrate</button>
+                <input type="password" placeholder="Escribe tu Password" name="password" id="password" required>
+                <%if(locals.errores && errores.password){%>  
+                    <p class="errores"><%= errores.password.msg%></p>   
+                <%}%>
+                <label for="imagen"> Imagen de usuario</label>
+                <input class="item" type="file" name="imagen" id="imagen"required>
+                <label for="condiciones">Al crear tu cuenta aceptas nuestros <a href="/noexisten">Terminos y condiciones & Privacidad</a></label>
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <%if(locals.errores && errores.terminos){%>  
+                    <p class="errores"><%= errores.terminos.msg%></p>   
+                <%}%>
+                <br>
+
+                <button class="button1" type="submit" value="Submit">Registrate</button> 
+                <button class="button1" type="reset" value="reset">Vaciar formulario</button>
+                <br>
+                <a href="/MiCuenta">Ya tengo una cuenta con ustedes</a>
             </div> 
         </form>
     </div>
-</div>
+
 <%- include("./partials/footer") %>

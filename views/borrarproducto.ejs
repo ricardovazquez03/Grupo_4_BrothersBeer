@@ -4,16 +4,15 @@
    <div class="main-container-registro">
    <div class="container-register">
 
-       <form action="/borrar/<%=id%>?_method=DELETE" method="POST">
-           <h1>Estas seguro que deseas eliminar <%=Productos[id].categoria%> <%=Productos[id].nombre%> ?</h1>
-           
+       <form action="/borrar/<%=producto.producto_id%>?_method=DELETE" method="POST">
+           <h1>Estas seguro que deseas eliminar <%=producto.type_name%> <%=producto.producto_name%> ?</h1>
            <br><br>
            <label>Eliminando un producto aceptas que todos los datos referentes al mismo van a ser borrados de la base de datos</label>
            <br><br>
            <p class="especial0"><button class="especial" type="submit" value="Submit"><i class="far fa-sad-cry carita"></i></button>
            <label>Borrar</label></p>
        </form>
-       <p class="especial0"><button class="especial"><a href="/producto/<%=id%>"><i class="far fa-laugh-beam carita"></i></a></button>
+       <p class="especial0"><button class="especial"><a href="/producto/<%=producto.producto_id-1%>"><i class="far fa-laugh-beam carita"></i></a></button>
        <label>Cambíe de opinión</label></p>
        </div>
        </div>

@@ -350,7 +350,18 @@ footer span {
         margin-bottom: 5px;
     }
 
+/*Perfil de Usuario*/
 
+.Usuario{
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 50%;
+}
+.exit{
+    font-size: 300%;
+    margin-left: 5%;
+    color: rgb(226, 32, 97);
+}
 /*/*Registro de nuevos productos*/
 
 .agregar-inventario {
@@ -526,21 +537,22 @@ button:hover {
         background-color:#ddd;
         outline: none;
     }
-
-    .formulario-registro{
-        margin:auto;
-    }
   
     .main-container-registro {
-        display:flex;
-        align-content: center;
-        justify-content: center;
-        padding: 10%;
+        padding: 10%;  
+        margin-left: 15%;
+    }
+
+    .errores{
+        font-size: 7px;
+        font-weight: bold;
+        color: red;
     }
 
     .container-register{
-        padding: 20px;
-        width: 60%;
+        
+        padding: 15px;
+        width: 70%;
         border: 1px solid #ccc;
         border-radius: 10px;
         background: white;
@@ -585,7 +597,7 @@ button:hover {
         width:10px;
         height: 15px;
         float: left;
-        margin: 0.5 0.5 0,5;
+        
         border: 5px solid #ccc;
         background: #fff;
         }
@@ -674,6 +686,10 @@ button:hover {
     .descripcion{
         width: 50vw;
      }
+     .Usuario{
+        font-size: 700%;
+        margin-left: 35%;
+    }
 
 }
 @media (max-width:720px){
@@ -686,6 +702,7 @@ button:hover {
         flex-direction: column;
         width: 80%;
     }
+    
 }
 @media (max-width:700px){
     .products{
@@ -731,5 +748,10 @@ button:hover {
     }
     .boton{
         height: 30px;
+    }
+
+    .Usuario{
+        font-size: 500%;
+        margin-left: 35%;
     }
 }

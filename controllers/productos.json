@@ -9,7 +9,7 @@
         "puntuacion": 4
     },
     {
-        "id": "1",
+        "id": 1,
         "nombre": "Heineken",
         "descripcion": "Heineken® es una cerveza única, y desde 1873 hasta la fecha conserva la misma calidad, principios e ingredientes. A diferencia de cualquier otra cerveza en México, Heineken® se fermenta en el fondo de tanques horizontales, lo que la hace mas clara, pura y durable.",
         "precio": 26,
@@ -18,7 +18,7 @@
         "puntuacion": 4
     },
     {
-        "id": "2",
+        "id": 2,
         "nombre": "Bocanegra",
         "descripcion": "Nuestro origen es nuestra esencia. Bocanegra es la creación de dos amigos que decidieron seguir su pasión e inspirar a aquellos que se atreven a ir más allá. Con sede en Monterrey, esta cerveza ha cambiado la percepción de los consumidores llevándola al nivel que merece. Una cerveza digna de colocarse en las mejores mesas, la cerveza Bocanegra de Monterrey ha dominado el arte de la cerveza bohemia.",
         "precio": 25,
