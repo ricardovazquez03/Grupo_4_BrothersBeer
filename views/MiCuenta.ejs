@@ -4,6 +4,7 @@
      <div class="container-register fondo-registro">
         <form action="/MiCuenta/IniciarSesion" method="POST" enctype="multipart/form-data">
                 <h1>Bienvenido de Vuelta</h1>
+                <h2 style="padding-left: 39%;">Inicia Sesión</h2>
                 <%if(locals.errores){%> 
                     <%for(i in errores){%>
                     <p class="errores"><%= errores[i].msg%></p>
@@ -18,7 +19,7 @@
                 <p class="olvidaste"><label>Recordame</label>
                 <input  type="checkbox" id="recuerdame" name="recuerdame" checked></p>
                 
-                <button type="submit" class="btn">Ingresar</button>
+                <button class="btn" type="submit" value="Submit" >Ingresar</button>
                 <br>
                 <a class="olvidaste" href="/Nimodo">¿Olvidaste tu contraseña?</a>
                 <br>

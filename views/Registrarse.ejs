@@ -1,7 +1,7 @@
 <%- include("./partials/header") %>
 
     <div class="main-container-registro">
-        <form action="/RegistroUsuario" method="POST" enctype="multipart/form-data">
+        <form action="/RegistroUsuario" method="POST" enctype="multipart/form-data" multiple>
             <div class="container-register">
                 <h1>Bienvenido</h1>
                 <h2>Registrate</h2>
@@ -29,8 +29,6 @@
                 <%if(locals.errores && errores.password){%>  
                     <p class="errores"><%= errores.password.msg%></p>   
                 <%}%>
-                <label for="imagen"> Imagen de usuario</label>
-                <input class="item" type="file" name="imagen" id="imagen"required>
                 <label for="condiciones">Al crear tu cuenta aceptas nuestros <a href="/noexisten">Terminos y condiciones & Privacidad</a></label>
                 <input type="checkbox" id="terminos" name="terminos" required>
                 <%if(locals.errores && errores.terminos){%>  

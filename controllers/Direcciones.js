@@ -2,18 +2,18 @@ const _=require("lodash");
 const fs=require('fs');
 const bcrypt=require("bcryptjs");
 const path = require('path');
-const {validationResult}=require("express-validator");
+const {validationResult, body}=require("express-validator");
 
 /*Configurando la Base de Datos */
 const db = require('../src/database/models');
+const { Console } = require("console");
 
 /*Se llama a cada uno de los modelos*/
 const productos = db.Producto;
 const usuarios = db.Usuario;
 
-/*Productos */
-let ProductosJS=fs.readFileSync(path.join(__dirname,'productos.json'),{encoding:"utf-8"});
-let Productos=JSON.parse(ProductosJS);
+let user;
+let producto;
 
 
 
@@ -21,7 +21,8 @@ const direcciones ={
 
     home: (req,res)=>{
         productos.findAll().then(productos=>{
-         res.render("home",{Productos:productos});   
+            
+         res.render("home",{Productos:productos}); 
         })
         .catch(error=>{
             res.redirect("/NoestaConectadaLaBaseDeDatos");
@@ -29,7 +30,14 @@ const direcciones ={
     },
 
     carrito:(req,res)=>{
-        res.render("Carrito",{Productos:Productos});
+
+        productos.findAll().then(productos=>{
+            
+            res.render("Carrito",{Productos:productos}); 
+           })
+           .catch(error=>{
+               res.redirect("/NoestaConectadaLaBaseDeDatos");
+           })
     },
 
     producto:(req,res)=>{
@@ -54,52 +62,43 @@ const direcciones ={
     registrarse:(req,res)=>{
         res.render("Registrarse");
     },
-
-   /* registrarUsuario:(req,res)=>{
-        
-        const errores=validationResult(req);
-
-        if(errores.errors.length==0){
-
-
-            let NuevoUsuario=
-        {
-        id:Usuarios.length+1,
-        username:req.body.username,
-        direccion:req.body.direccion,
-        email:req.body.email,
-        password:bcrypt.hashSync(req.body.password,10)
-       }
-
-       Usuarios.push(NuevoUsuario)
-
-       let NuevoUsuariojs=JSON.stringify(Usuarios);
-       fs.writeFileSync(path.join(__dirname,'usuarios.json'),NuevoUsuariojs)
-
-            res.render("/");}
-        else{res.render("Registrarse",{errores: errores.mapped(),old:req.body})}
-    },*/
     registrarUsuario:(req,res)=>{
-        
+        user=req.body.username;
         const errores=validationResult(req);
 
         if(errores.errors.length==0){
-        
-            usuarios.create(
+             usuarios.create(
             {
                 username:req.body.username,
-                direccion:req.body.direccion,
                 email:req.body.email,
-                imagen:req.file.filename,
-                password:bcrypt.hashSync(req.body.password,10)
-            }
-        )
+                password:bcrypt.hashSync(req.body.password,10),
+                direccion:req.body.direccion,
+                imagen:req.body.username,
+                desarrollador:null
+            } 
+       )
         .then(()=> {
-            return res.redirect('/MiCuenta')})            
+            return res.render('Imagen')})            
             .catch(error=>{
                 res.redirect("/NoestaConectadaLaBaseDeDatos");
             }) }
-        else{res.render("Registrarse",{errores: errores.mapped(),old:req.body})}
+        else{res.render("Registrarse",{errores: errores.mapped(),old:req.body})}  
+    },
+
+    imagenUsuarios:(req,res)=>{
+        usuarios
+        .update(
+            {
+                imagen: req.file.filename,
+            },
+            {
+                where:{
+                    username: user
+                }
+            })
+        .then(()=> {
+            return res.redirect('/MiCuenta')})            
+        .catch(error => res.redirect("/NosePudoActualizar"))
     },
 
     micuenta:(req,res)=>{
@@ -120,37 +119,51 @@ const direcciones ={
            })  
     },
 
-    iniciarSesion:(req,res)=>{
-        const errores=validationResult(req);
-        let SesionUsuario;
- 
-        if(errores.errors.length==0){
-            usuarios.findAll().then(usuario=>{
-                for(i in usuario){
-                
-                        if(usuario[i].username==req.body.username){
-                            if(bcrypt.compareSync(req.body.password,usuario[i].password)){
-                                SesionUsuario=usuario[i];
-                                req.session.sesionUsuario=SesionUsuario;
-                                break;
-                            }
-                            else{
-                                res.render("MiCuenta",{errores: [{msg:"Contraseña incorrecta"}]})
-                            }    
-                        }
-                        else{res.render("MiCuenta",{errores: [{msg:"No estas registrado"}]})} 
+    iniciarSesion: (req, res) => {
+            const errores = validationResult(req);
+            let SesionUsuario;
+            let NotFound;
+            if (errores.errors.length == 0) {
+            usuarios
+                .findAll()
+                .then((usuario) => {
+                for (let i = 0; i < usuario.length; i++) {      
+                    if (usuario[i].username == req.body.username) {
+                    if (bcrypt.compareSync(req.body.password, usuario[i].password)) {
+                        SesionUsuario = usuario[i];
+                        req.session.sesionUsuario = SesionUsuario;
+                        break;
+                    } else {
+                        res.render("MiCuenta", { errores: [{ msg: "Contraseña incorrecta" }] });
+                        break;
+                    }
+                    }
+                    if (i == usuario.length - 1) {
+                    NotFound = true;
+                    }
+                }
+                if (NotFound == true) {
+                    res.render("MiCuenta", { errores: [{ msg: "No estas registrado" }] });
                 }
                 //no funciona
-                if(req.body.recuerdame!=undefined){
-                    res.cookie('usuario',SesionUsuario.username,{maxAge:360000})
-                } 
-                res.redirect("/");
-               })
-               .catch(error=>{
-                   res.redirect("/NoestaConectadaLaBaseDeDatos");
-               })      
+                if (req.body.recuerdame != undefined) {
+                    res.cookie("usuario", SesionUsuario.username, { maxAge: 360000 });
+            }
+            res.redirect("/");
+            })
+            .catch((error) => {
+            res.redirect("/NoestaConectadaLaBaseDeDatos");
+            });
+        } else {
+        res.render("MiCuenta", { errores: errores.mapped(), old: req.body });
         }
-        else{ res.render("MiCuenta",{errores: errores.mapped(),old:req.body})}
+    },
+
+    CerrarSesion: (req, res) => {
+        
+        req.session.sesionUsuario = undefined;
+        res.redirect('/MiCuenta')
+    
     },
 
     ayuda:(req,res)=>{
@@ -181,44 +194,39 @@ const direcciones ={
         
     },
 
-    /*registro:(req,res)=> {
-        if (req.body) {
-            
-        let NuevoProducto=
-        {
-        id:Productos.length+1,
-        nombre:req.body.nombre,
-        descripcion:req.body.description,
-        precio:req.body.precio,
-        imagen:req.file.filename,
-        categoria:req.body.categoria,
-        puntuacion:req.body.puntuacion,
-       }
-
-       Productos.push(NuevoProducto)
-
-       let NuevoProductojs=JSON.stringify(Productos);
-       fs.writeFileSync(path.join(__dirname,'productos.json'),NuevoProductojs)
-
-        res.redirect("/")}
-    },*/
-    registro: function (req,res) {
-        productos
-        .create(
+    registroProducto:(req,res)=>{
+        producto=req.body.nombre;
+        productos.create(
             {
             producto_name:req.body.nombre,
             price:req.body.precio,
             description:req.body.description,
-            imagen:req.file.filename,
-            range:req.body.puntuacion,
+            imagen:req.body.nombre,
+            rango:req.body.puntuacion,
             type_name:req.body.categoria
             }
         )
         .then(()=> {
-            return res.redirect('/home')})            
+            return res.render('imagenProducto')})            
             .catch(error=>{
                 res.redirect("/NoestaConectadaLaBaseDeDatos");
             })  
+    },
+
+    imagenProductos:(req,res)=>{
+        productos
+        .update(
+            {
+                imagen: req.file.filename,
+            },
+            {
+                where:{
+                    producto_name:producto
+                }
+            })
+        .then(()=> {
+            return res.redirect('/')})            
+        .catch(error => res.redirect("/NosePudoActualizar"))
     },
     borrarproductos:(req,res)=> {
         let id=req.params.id;
@@ -242,17 +250,6 @@ const direcciones ={
        }) 
     },
 
-    /*borrar:(req,res)=> {
-        const id = req.params.id;
-        if (id) {
-        const idx = Productos.findIndex(productos => productos.id == id)
-        Productos.splice(idx, 1) 
-            let NuevosProductosjs=JSON.stringify(Productos);
-            fs.writeFileSync(path.join(__dirname,'productos.json'),NuevosProductosjs)
-            res.redirect("/")
-    }
-        res.redirect("/Ayuda")
-    },*/
     borrar:(req,res)=>{
 
        
@@ -288,24 +285,6 @@ const direcciones ={
        })
     },
 
-    /*editar:(req,res)=> {
-        const id = req.params.id;
-        if (id) {
-                const idx = Productos.findIndex(productos => productos.id == id)
-
-                Productos[idx].nombre=req.body.nombre
-                Productos[idx].precio=req.body.precio
-                Productos[idx].categoria=req.body.categoria
-                Productos[idx].puntuacion=req.body.puntuacion
-
-                let ProductoEditadojs=JSON.stringify(Productos);
-            fs.writeFileSync(path.join(__dirname,'productos.json'),ProductoEditadojs)
-              res.redirect('/producto/'+id)
-                
-            }
-            res.redirect("/Ayuda")
-              
-    }*/
     editar:(req,res)=>{
         let id = req.params.id;
         productos

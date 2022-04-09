@@ -1,0 +1,19 @@
+
+<%- include("./partials/header") %>
+<body>
+   <div class="formulario-registro">
+   <div class="main-container-registro">
+   <div class="container-register">
+       <form action="/registroproductos/nuevo/imagen" method="POST" enctype="multipart/form-data">
+           <h1>Formulario para la subida de imagenes</h1>
+           <br>
+           <label for="imagen"> Sube una imagen para el nuevo producto</label>
+           <input class="item" type="file" name="imagen" id="imagen"required>
+           <button class="button1" type="submit" value="Submit"> Terminar Registro</button>
+       </form>
+       </div>
+       </div>
+       </div>
+</body>
+
+       <%- include("./partials/footer") %>

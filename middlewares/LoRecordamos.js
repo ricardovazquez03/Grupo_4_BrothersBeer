@@ -1,9 +1,6 @@
 const fs=require('fs');
 const _=require("lodash");
 const path = require('path');
-let UsuariosJS=fs.readFileSync(path.join(__dirname,"../controllers/usuarios.json"),{encoding:"utf-8"});
-let Usuarios=JSON.parse(UsuariosJS);
-
 
 const loRecordamos=(req,res,next)=>{
     if(req.cookies ==undefined){next();}  

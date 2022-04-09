@@ -295,60 +295,52 @@ footer span {
     /*Historial de compras */
 
     .boxfondo{
-        color:black;
+        display: flex;
         margin-top: 15px;
-        font-size-adjust: 100px;
-        background-color: white;
-
     }
 
     .boxmedio{
-        /*border:solid red;*/
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        width: 65%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 7%;
+        padding-top: 2%;
+        margin-bottom: 15%;
+        padding-bottom: 2%;
+        align-items:center;
+        color: #fff;
+        margin-right: 10%;
+        background-color: rgb(226, 32, 97);
+        
     }
 
-    .boxinfo{
-        border:solid rgba(0, 0, 0, 0.644);
-        font-size: 100px;
-        display: flex;
-        justify-content: space-around;
-        background-color: rgba(128, 128, 128, 0.377);
-    }
 
     .productocompra{
-       /* border:solid purple;*/
-        margin-right: 80%;
-        margin-top: 5px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        width: 35%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:center;
+        background-color: rgb(226, 32, 97);
+        border-top-left-radius:50%; 
+        border-bottom-left-radius: 5%; 
+        border-bottom-right-radius: 50%;
+        padding-top: 5%;
+        padding-bottom: 7%;
+        padding-right: 10%;
+        margin-left: 10%;
+        margin-top: 7%;
+        
     }
     
     .compraima{
-        border:solid skyblue;
-        height:250px;
-        justify-content: center;
-        text-align: center;
+        border-radius: 50%;
+        width: 200%;
+        height: 250px;
     
     }
 
-    .boxname{
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-
-    }
-    .namehistorial{
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        background-color:#002f75;
-        color: white;
-        border-radius:5px;
-        margin-bottom: 5px;
-    }
 
 /*Perfil de Usuario*/
 

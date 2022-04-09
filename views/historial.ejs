@@ -1,27 +1,46 @@
+<!DOCTYPE html>
 <%- include("./partials/header") %>
-<Body>
-    <h1><strong>Historial de compras</strong> </h1>
-    <a href="/MiCuenta" class="exit"> <i class="fas fa-arrow-circle-left"></i></a>
-    <p>Consulta la información de tus pedidos anteriores y en proceso</p>
-<div class= "boxfondo">
-    <div class= "boxmedio">
-        <div class="boxinfo">
-            <p>No.pedido:</p>
-            <p>Fecha:</p>
-            <p>Total:</p>
-            <p>Usuario:</p>
-            <p>Estatus:</p>
-            <p>></p>
+<br><br>
+    <h1><strong>Tu Historial de Pedidos <i class="fas fa-truck-loading"></i></strong></h1>
+   <a href="/MiCuenta" class="exit"> <i class="fas fa-arrow-circle-left"></i></a>
+<section class="centrar">
+    <article class="carrito">
+        <div class="fig">
+        <img class="miniatura" src="/img/daiquiri.png">
+        <p class="nombre">Cóctel Daiquiri</p>
         </div>
-        <p>¡Tu pedido ha sido entregado!</p>
-        <div class="productocompra">
-            <a href="/Producto/6"><img src='/img/daiquiri.png' alt='drink1' class="compraima"> </a>
-             <div class="boxname">
-              <p class="namehistorial">Bebida Daiquiri</p>
+        <strong>
+            <p>No de la Entrega: 215dfsf-C &emsp;
+            Cantidad Pedida: 3 &emsp;
+            Fecha:13/04/2022 &emsp;
+            Total:$165 &emsp;
+            Estado: Pendiente</p>&emsp;
+        </strong>
+    </article>
+    <article class="carrito">
+        <div class="fig"><img class="miniatura" src="/img/bocanegra.jpg">
+            <p class="nombre">Cerveza Bocanegra</p>
         </div>
-    </div>
-</div>
-</Body>
-
-
+        <strong>
+            <p>No de la Entrega: bvfhg15f-c &emsp;
+            Cantidad Pedida: 1 &emsp;
+            Fecha:09/04/2022 &emsp;
+            Total:$25 &emsp;
+            Estado: Entregado</p>&emsp;
+        </strong>
+    </article>
+    <article class="carrito">
+        <div class="fig"><img class="miniatura" src="/img/heineken.jpg">
+        <p class="nombre">Cerveza Heineken</p>
+        </div>
+        <strong>
+            <p>No de la Entrega: 45dfvsa-C &emsp;
+            Cantidad Pedida: 2 &emsp;
+            Fecha:12/04/2022 &emsp;
+            Total:$52 &emsp;
+            Estado: Entregado</p>&emsp;
+        </strong>
+    </article>
+</section>
+<br><br>
 <%- include("./partials/footer") %>

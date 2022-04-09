@@ -5,7 +5,7 @@
     <a href="/MiCuenta" class="exit"> <i class="fas fa-arrow-circle-left" style="margin-top: 5%;"></i></a>
     <div class="main-container-registro">
     <div class="container-register">
-        <form action="/nuevo" method="POST" enctype="multipart/form-data">
+        <form action="/registroproductos/nuevo" method="POST" enctype="multipart/form-data">
             <h1>Formulario para nuevos productos</h1>
             <br>
             <label for="item">Nombre del producto</label>
@@ -18,8 +18,6 @@
             </select>
             <label for="description">Descripcion del producto</label>
             <textarea class="item" name="description" id="description"></textarea>
-            <label for="imagen"> Imagen para el producto</label>
-            <input class="item" type="file" name="imagen" id="imagen"required>
             <label for="score">Puntuación</label>
             <select class="item1" name="puntuacion" id="puntuacion" required>
                 <option selected value="">Elige</option>
