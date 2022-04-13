@@ -174,18 +174,21 @@ const direcciones ={
     },
 
     registroproductos:(req,res)=> {
-
+        let j;
         usuarios.findAll().then(usuario=>{
 
             for(i in usuario){
+                
                 if(usuario[i].username==req.session.sesionUsuario.username){
+
                     if(usuario[i].desarrollador!=null){
                         res.render("registroproductos")
                     }
                     else{res.redirect("/");}
                 }
-                else{res.redirect("/");}
+                j++;       
             }
+            if(j==usuario.length()){res.redirect("/")}
            })
            .catch(error=>{
                res.redirect("/NoestaConectadaLaBaseDeDatos");
