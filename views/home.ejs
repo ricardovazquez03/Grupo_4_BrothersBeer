@@ -11,7 +11,7 @@
     <% for (let i in Productos) { %>
         <% if(Productos[i].type_name==="Cerveza"){ %>
     <div class="size">
-      <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
+      <a href="/Producto/<%=Productos[i].producto_id%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
        <div class="align">
         <h3 class="price">$ <%=Productos[i].price%></h3>
@@ -30,7 +30,7 @@
     <% for (let i in Productos) { %>
         <% if(Productos[i].type_name==="Cóctel"){ %>
     <div class="size">
-      <a href="/Producto/<%=i%>"><img class="imgs2" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
+      <a href="/Producto/<%=Productos[i].producto_id%>"><img class="imgs2" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
       <article>
        <div class="align">
         <h3 class="price">$ <%=Productos[i].price%></h3>

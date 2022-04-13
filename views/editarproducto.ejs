@@ -2,7 +2,7 @@
 <%- include("./partials/header") %>
 <body>
    <div class="formulario-registro">
-    <a href="/producto/<%=producto.producto_id-1%>" class="exit"> <i class="fas fa-arrow-circle-left" style="margin-top: 5%;"></i></a>
+    <a href="/producto/<%=producto.producto_id%>" class="exit"> <i class="fas fa-arrow-circle-left" style="margin-top: 5%;"></i></a>
    <div class="main-container-registro">
    <div class="container-register">
        <form action="/editar/<%=producto.producto_id%>?_method=PUT" method="POST">

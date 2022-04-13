@@ -1,14 +1,14 @@
 <%- include("./partials/header") %>
 <br><br>
-    <h1><strong><%=Productos[id].type_name%> <%=Productos[id].producto_name%></strong></h1>
+    <h1><strong><%=Productos.type_name%> <%=Productos.producto_name%></strong></h1>
     <article class="articulo">
         <div class="colum">
-            <p><img class="figura" src='/img/<%=Productos[id].imagen%>'></p>
-            <p><% if (Number.isInteger(Productos[id].rango)==true){ %>
-            <% for (j=1; j<=Productos[id].puntuacion;j++) { %>
+            <p><img class="figura" src='/img/<%=Productos.imagen%>'></p>
+            <p><% if (Number.isInteger(Productos.rango)==true){ %>
+            <% for (j=1; j<=Productos.puntuacion;j++) { %>
             <i class="fas fa-star rate"></i>
                 <% } %>
-                <% }else{let NuevaPuntuacion=Math.floor(Productos[id].rango)%>
+                <% }else{let NuevaPuntuacion=Math.floor(Productos.rango)%>
                     <% for (j=1; j<=NuevaPuntuacion;j++) { %>
             <i class="fas fa-star rate"></i>
             <% } %>
@@ -16,7 +16,7 @@
             <% } %></p>
         </div>
         <div class="colum-b">
-        <p>$ <%=Productos[id].price%></p>
+        <p>$ <%=Productos.price%></p>
         <div><button class="boton s">-</button>Cantidad<button class="boton s">+</button></div>
         <p>
         <button class="boton">Agregar al carrito<i class="fas fa-cart-arrow-down"></i></button>
@@ -25,8 +25,8 @@
         </p>
         <%if(Usuario!=undefined){%>
         <%if(Usuario.desarrollador!=null){%>
-        <p><a href="/editarproducto/<%=id%>"><button class="boton">Editar</button></a>
-        <a href="/borrarproducto/<%=id%>"><button class="boton">Borrar</button></a></p>
+        <p><a href="/editarproducto/<%=Productos.producto_id%>"><button class="boton">Editar</button></a>
+        <a href="/borrarproducto/<%=Productos.producto_id%>"><button class="boton">Borrar</button></a></p>
         <%}%>
         <%}%>
         </div>
@@ -34,23 +34,8 @@
     <div class="descripcion">
         <h3>Descripción del producto:</h3>
         <br>
-        <p><%=Productos[id].description%></p>
+        <p><%=Productos.description%></p>
     </div>
 <br><br>
- <h1><strong>Productos que podrian interesarte</strong></h1>
- <section class="products">
-    <% for (j=0; j<=4;j++) { %>
-        <%let i = Math.floor((Math.random() * Productos.length) + 0); %>
-    <div class="size2">
-      <a href="/Producto/<%=i%>"><img class="imgs" src='/img/<%=Productos[i].imagen%>' alt='product1'></a>
-      <article>
-       <div class="align">
-        <h3 class="price">$ <%=Productos[i].price%></h3>
-        <br>
-        <p class="name"><%=Productos[i].producto_name%></p>
-       </div>
-      </article>
-    </div>
-    <% } %>
-</section>
+
 <%- include("./partials/footer") %>

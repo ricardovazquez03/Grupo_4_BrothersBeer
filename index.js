@@ -91,7 +91,7 @@ index.get('/borrarproducto/:id',Autorizado,Direcciones.borrarproductos);
 index.delete('/borrar/:id',Autorizado,Direcciones.borrar);
 
 index.get('/editarproducto/:id',Autorizado,Direcciones.editarproductos);
-index.put('/editar/:id',Direcciones.editar);
+index.put('/editar/:id',Autorizado,mostrar.array(),Direcciones.editar);
 
 index.use((req,res,next)=>{
   res.status(404).render("Ayuda")

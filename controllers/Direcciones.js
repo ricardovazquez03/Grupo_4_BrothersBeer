@@ -21,7 +21,6 @@ const direcciones ={
 
     home: (req,res)=>{
         productos.findAll().then(productos=>{
-            
          res.render("home",{Productos:productos}); 
         })
         .catch(error=>{
@@ -43,15 +42,15 @@ const direcciones ={
     producto:(req,res)=>{
         let id=req.params.id;
             if(req.session.sesionUsuario){
-                productos.findAll().then(producto=>{
-                res.render("Producto",{id:id,Productos:producto,Usuario:req.session.sesionUsuario});        
+                productos.findByPk(id).then(producto=>{
+                res.render("Producto",{Productos:producto,Usuario:req.session.sesionUsuario});        
             })
             .catch(error=>{
                 res.redirect("/NoestaConectadaLaBaseDeDatos");
             })  }
         else{
-            productos.findAll().then(productos=>{
-                res.render("Producto",{id:id,Productos:productos,Usuario:undefined});        
+            productos.findByPk(id).then(productos=>{
+                res.render("Producto",{Productos:productos,Usuario:undefined});        
             })
             .catch(error=>{
                 res.redirect("/NoestaConectadaLaBaseDeDatos");
@@ -228,10 +227,9 @@ const direcciones ={
             return res.redirect('/')})            
         .catch(error => res.redirect("/NosePudoActualizar"))
     },
+
     borrarproductos:(req,res)=> {
         let id=req.params.id;
-
-        id++;
         productos.findByPk(id).then(producto=>{
 
             usuarios.findOne({
@@ -265,20 +263,9 @@ const direcciones ={
 
     editarproductos:(req,res)=> {
         let id=req.params.id;
-
-        id++;
         productos.findByPk(id).then(producto=>{
-
-            usuarios.findOne({
-                where:{
-                    username:req.session.sesionUsuario.username
-                }
-                }).then(usuario=>{
-                    if(usuario.desarrollador!=null){
-                        res.render("editarproducto",{producto})
-                    }
-                    else{res.redirect("/")}
-            })
+            res.render("editarproducto",{producto})
+              
         })             
        .catch(error=>{
            res.redirect("/NoestaConectadaLaBaseDeDatos");
@@ -299,8 +286,9 @@ const direcciones ={
             {
                 where: {producto_id: id}
             })
+           
         .then(()=> {
-            return res.redirect('/Producto/:producto.producto_id-1')})            
+            return res.redirect('/')})        
         .catch(error => res.redirect("/NosePudoActualizar"))
     }
 
