@@ -17,6 +17,9 @@ const Autorizado=require("./middlewares/Autenticador");
 const TienesCuenta=require("./middlewares/TienesCuenta");
 const Recordado=require("./middlewares/LoRecordamos");
 const Nocuenta=require("./middlewares/NoCuenta");
+//Aquí llamo a las rutas de las apis
+const usersRouterAPI = require('./routes/api/users');
+const productsRouterAPI = require('./routes/api/products');
 
 /* Configurando formularios*/
 index.use(methodOverride('_method'))
@@ -92,6 +95,11 @@ index.delete('/borrar/:id',Autorizado,Direcciones.borrar);
 
 index.get('/editarproducto/:id',Autorizado,Direcciones.editarproductos);
 index.put('/editar/:id',Autorizado,mostrar.array(),Direcciones.editar);
+
+
+//Recursos para (APIs)
+index.use('/api/users',usersRouterAPI);
+index.use('/api/products',productsRouterAPI);
 
 index.use((req,res,next)=>{
   res.status(404).render("Ayuda")
