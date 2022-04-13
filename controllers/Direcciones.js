@@ -174,7 +174,7 @@ const direcciones ={
     },
 
     registroproductos:(req,res)=> {
-        let j;
+        let j=0;
         usuarios.findAll().then(usuario=>{
 
             for(i in usuario){
@@ -188,7 +188,7 @@ const direcciones ={
                 }
                 j++;       
             }
-            if(j==usuario.length()){res.redirect("/")}
+            if(j==usuario.length()-1){res.redirect("/")}
            })
            .catch(error=>{
                res.redirect("/NoestaConectadaLaBaseDeDatos");
