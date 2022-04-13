@@ -8,11 +8,21 @@
 
 -Daniel Adrian Garza Rivera
 
--Gerardo Hernández Méndez
+-Gerardo Hernández Méndez 
+-Usuario desarrollador: Gerardo 
+-Contraseña: 123456789
 
 -Angel Uziel Gonzalez Torrez
+-Usuario desarrollador: Angel
+-Contraseña: Monito123
 
 -Ricardo Vazquez Garcia
+-Usuario desarrollador: Ricardo 
+-Contraseña: supersecreta
+
+-Usuario Cliente: LuisVG 
+-Contraseña: Luis12345
+
 
 ## 2. Definiendo la temática del Market Place.
 
